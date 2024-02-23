@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  image: MyString
+  finance_fee: 9.99
+  option_to_purchase_fee: 9.99
+  duration: 1
+  amount_payable: 9.99
+  availability: false
+
+two:
+  name: MyString
+  description: MyText
+  image: MyString
+  finance_fee: 9.99
+  option_to_purchase_fee: 9.99
+  duration: 1
+  amount_payable: 9.99
+  availability: false
