@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class Api::BoatsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
