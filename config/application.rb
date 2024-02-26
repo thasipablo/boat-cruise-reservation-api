@@ -14,7 +14,7 @@ module BoatCruiseReservation
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_paths << Rails.root.join("lib")
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -24,9 +24,14 @@ module BoatCruiseReservation
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Only loads a smaller set of middleware suitable for API only apps.
+    # Only loads a smaller set of middleware suitable for API-only apps.
     # Middleware like session, flash, cookies can be added back manually.
-    # Skip views, helpers and assets when generating a new resource.
+    # Skip views, helpers, and assets when generating a new resource.
     config.api_only = true
+
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+
+    config.devise_jwt_secret_key = '6606fe9c5612f819d19742e2994318fb119030dea0e68a88a819d3ca2eee70ff5ecb0e12d60c490ecfa568cad4766b8a557b87e5ad2e88139119a6fdd4904260'
   end
 end

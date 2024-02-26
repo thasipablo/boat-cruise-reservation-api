@@ -47,6 +47,8 @@ end
 
 
 gem "devise", "~> 4.9"
+gem 'devise-jwt'
+gem 'jsonapi-serializer'
 gem 'rack-cors', require: 'rack/cors'
 
 gem "devise-api", "~> 0.1.3"
