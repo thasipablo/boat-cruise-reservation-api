@@ -2,22 +2,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   include RackSessionsFix
   respond_to :json
 
-  private
+  def create
+    build_resource(sign_up_params)
+    resource.name = params[:user][:name]
 
-  def respond_with(resource, _opts = {})
-    if request.method == "POST" && resource.persisted?
+    if resource.save
+      sign_up(resource_name, resource)
       render json: {
-        status: { code: 200, message: "Signed up sucessfully." },
+        status: { code: 200, message: 'Signed up successfully.' },
         data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
       }, status: :ok
-    elsif request.method == "DELETE"
-      render json: {
-        status: { code: 200, message: "Account deleted successfully." }
-      }, status: :ok
     else
+      clean_up_passwords resource
+      set_minimum_password_length
       render json: {
-        status: { code: 422, message: "User couldn't be created successfully. #{
-          resource.errors.full_messages.to_sentence}" }
+        status: { code: 422, message: "User couldn't be created successfully. #{resource.errors.full_messages.to_sentence}" }
       }, status: :unprocessable_entity
     end
   end

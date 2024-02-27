@@ -28,10 +28,8 @@ module BoatCruiseReservation
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers, and assets when generating a new resource.
     config.api_only = true
-
+    config.session_store :cookie_store, key: '_interslice_session'
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
-
-    config.devise_jwt_secret_key = '6606fe9c5612f819d19742e2994318fb119030dea0e68a88a819d3ca2eee70ff5ecb0e12d60c490ecfa568cad4766b8a557b87e5ad2e88139119a6fdd4904260'
-  end
+    config.middleware.use config.session_store, config.session_options
+      end
 end
