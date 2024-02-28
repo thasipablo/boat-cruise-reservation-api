@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  # ... other routes ...
-
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -11,16 +8,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+  get "up" => "rails/health#show", as: :rails_health_check
 
-  # Add a custom logout route
-  post 'logout', to: 'users/sessions#destroy', as: :logout
 
-  # Health check route
-  get 'up', to: 'rails/health#show', as: :rails_health_check
 end
-
-  namespace :api do
-    resources :boats, only: [:index, :show, :create]
-  end
-end
-
