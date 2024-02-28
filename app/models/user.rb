@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   include Devise::JWT::RevocationStrategies::JTIMatcher
 
   # Include default devise modules. Others available are:
@@ -10,4 +11,7 @@ class User < ApplicationRecord
   def jwt_payload
     super
   end
+
+  has_many :reservations
+
 end

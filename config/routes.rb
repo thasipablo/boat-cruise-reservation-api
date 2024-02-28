@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # ... other routes ...
 
   devise_for :users, path: '', path_names: {
@@ -17,3 +18,9 @@ Rails.application.routes.draw do
   # Health check route
   get 'up', to: 'rails/health#show', as: :rails_health_check
 end
+
+  namespace :api do
+    resources :boats, only: [:index, :show, :create]
+  end
+end
+

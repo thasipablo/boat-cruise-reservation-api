@@ -29,4 +29,42 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_25_190155) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
+ActiveRecord::Schema[7.1].define(version: 2024_02_23_234433) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "boats", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "image"
+    t.decimal "finance_fee"
+    t.decimal "option_to_purchase_fee"
+    t.integer "duration"
+    t.decimal "amount_payable"
+    t.boolean "availability"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "date"
+    t.string "city"
+    t.bigint "boat_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["boat_id"], name: "index_reservations_on_boat_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "reservations", "boats"
+  add_foreign_key "reservations", "users"
+
 end
