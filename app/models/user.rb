@@ -7,10 +7,5 @@ class User < ApplicationRecord
          jwt_revocation_strategy: self
 
   validates :email, presence: true, uniqueness: true
-
-  def jwt_payload
-    super
-  end
-
   has_many :reservations
 end
