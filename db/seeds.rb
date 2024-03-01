@@ -54,3 +54,10 @@ boats = [
 boats.each do |boat|
   boat.save!
 end
+
+User.create(name: 'user1')
+User.create(name: 'user2')
+User.create(name: 'user3')
+User.create(name: 'user4')
+User.create(name: 'user5')
+
