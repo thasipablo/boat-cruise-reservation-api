@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
     end
   
     def show
-      @user = User.find_by(name: params[:name])
+      @user = User.find_by(name: params[:id])
   
       if @user
         render json: { user: @user }
@@ -23,11 +23,27 @@ class Api::UsersController < ApplicationController
         render json: { error: @user.errors.full_messages }, status: :unprocessable_entity
       end
     end
+
+    def login
+      name = params[:name] # Assuming the name is passed in the request parameters
+  
+      @user = User.find_by(name: name)
+  
+      if @user
+        render json: { data: @user }
+      else
+        render json: { error: 'Unauthorized' }, status: :unauthorized
+      end
+    end
+
+    def logout
+      render json: { message: 'Logout successful' }
+    end
   
     private
   
     def user_params
-      params.require(:user).permit(:name, :email, :other_attributes)
+      params.require(:user).permit(:name)
     end
   end
   
