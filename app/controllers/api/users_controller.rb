@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
   end
 
   def login
-    name = params[:name] # Assuming the name is passed in the request parameters
+    name = params[:name]
 
     @user = User.find_by(name:)
 
