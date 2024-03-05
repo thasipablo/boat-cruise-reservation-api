@@ -4,10 +4,10 @@ class CreateBoats < ActiveRecord::Migration[7.1]
       t.string :name
       t.text :description
       t.string :image
-      t.decimal :finance_fee
-      t.decimal :option_to_purchase_fee
+      t.decimal :finance
+      t.decimal :option
       t.integer :duration
-      t.decimal :amount_payable
+      t.decimal :amount
       t.boolean :availability
 
       t.timestamps

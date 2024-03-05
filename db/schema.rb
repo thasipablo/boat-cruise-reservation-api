@@ -18,10 +18,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_23_234433) do
     t.string "name"
     t.text "description"
     t.string "image"
-    t.decimal "finance_fee"
-    t.decimal "option_to_purchase_fee"
+    t.decimal "finance"
+    t.decimal "option"
     t.integer "duration"
-    t.decimal "amount_payable"
+    t.decimal "amount"
     t.boolean "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
