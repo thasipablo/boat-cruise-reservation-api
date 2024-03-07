@@ -18,12 +18,12 @@ RSpec.describe Api::ReservationsController, type: :controller do
   describe 'GET #show' do
     it 'returns reservations for a specific user' do
       user = create(:user)
-      reservation = create(:reservation, user: user)
+      reservation = create(:reservation, user:)
       get :show, params: { id: user.name }
       expect(response).to have_http_status(:ok)
       expect(assigns(:reservations)).to eq([reservation])
     end
-  
+
     it 'returns a not found message if user is not found' do
       get :show, params: { id: 'nonexistentuser' }
       expect(response).to have_http_status(:not_found)

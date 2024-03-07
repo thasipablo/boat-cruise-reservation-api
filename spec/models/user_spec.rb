@@ -15,8 +15,9 @@ RSpec.describe User, type: :model do
   end
 
   it 'has many reservations' do
-    first_reservation = subject.reservations.create(city: 'Sample City') 
+    first_reservation = subject.reservations.create(city: 'Sample City')
     second_reservation = subject.reservations.create(city: 'Another City')
     expect(subject.reservations).to include(second_reservation)
+    expect(subject.reservations).to include(first_reservation)
   end
 end
