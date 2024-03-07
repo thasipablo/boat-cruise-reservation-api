@@ -1,11 +1,10 @@
 class Api::ReservationsController < ApplicationController
-
   def index
-    #coming soon
+    # coming soon
   end
 
   def show
-    #coming soon
+    # coming soon
   end
 
   def create
