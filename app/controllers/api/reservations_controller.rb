@@ -1,10 +1,18 @@
 class Api::ReservationsController < ApplicationController
   def index
-    # coming soon
+    @reservations = Reservation.all
+    render json: @reservations, status: :ok
   end
 
   def show
-    # coming soon
+    user = User.find_by(name: params[:id])
+
+    if user
+      @reservations = user.reservations
+      render json: @reservations, status: :ok
+    else
+      render json: { error: 'User not found' }, status: :not_found
+    end
   end
 
   def create
