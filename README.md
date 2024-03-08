@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>Blog App</b></h3>
+  <h3><b>Boat Reservation API</b></h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -31,7 +31,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Expense-App <a name="about-project"></a>
+# 📖 Boat-Reservation-API <a name="about-project"></a>
 
 **Boat App API** is an API to retrieve boats.
 
