@@ -43,7 +43,7 @@ boats = [
 		name: "HOKAGE 01",
     description: "This magnificent 92-meter (303-foot) yacht, crafted by Nobiskrug, is a stunning example of maritime excellence. Originally built in 2000 and meticulously refitted in 2023, this vessel seamlessly combines classic design with modern amenities. With accommodations for up to 12 guests in 11 cabins, including luxurious lounges and spacious cabins, this yacht offers the ultimate in comfort and style. Built to the highest standards of quality and luxury, this yacht promises an unforgettable experience for those seeking the finest in maritime luxury.",
     image: "https://images.unsplash.com/photo-1585719238658-8a97633ee965?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    finance_fee: 450000.0,
+    finance: 450000.0,
     option: 800000.0,
     duration: 24,
     amount: 230000000.0,
