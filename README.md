@@ -12,14 +12,14 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+  - [API Documentation](#api-documentation)
+  - [Frontend Link](#frontend-link)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -62,11 +62,20 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
+<!-- API Documentation -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 API Documentation <a name="api-documentation"></a>
 
-- N/A
+- You can view the input json and response json formats and also you can interact with the API database to visualize the input and output flow of requests and responses.
+- [API docs](https://boat-cruise-reservation-api.onrender.com/api-docs/index.html)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Frontend Link -->
+
+## 🚀 Frontend Link <a name="frontend-Link"></a>
+
+- [Frontend](https://github.com/thasipablo/boat-cruise-reservation-web)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,6 +111,9 @@ Install this project with:
 ```sh
   cd boat-cruise-reservation-api
   bundle install
+  rails db:create - create the database
+  rails db:migrate - run pending migrations
+  rails db:seed
 ```
 
 ### Usage
@@ -119,18 +131,6 @@ To run tests, run the following command:
 ```sh
  rspec spec
 ```
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -191,7 +191,7 @@ If you like this project give me ⭐
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank [Murat Korkmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) for this project design idea.
+We would like to acknowledge the [Microverse](https://www.microverse.org/) community for the support.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
