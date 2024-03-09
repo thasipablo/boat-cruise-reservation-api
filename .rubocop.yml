@@ -8,6 +8,9 @@ AllCops:
     - "Rakefile"
     - "node_modules/**/*"
     - "Gemfile"
+    - "app/mailers/*"
+    - "test/*"
+    - "config.ru"
 
   DisplayCopNames: true
 
