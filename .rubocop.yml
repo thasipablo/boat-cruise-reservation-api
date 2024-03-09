@@ -11,6 +11,8 @@ AllCops:
     - "app/mailers/*"
     - "test/*"
     - "config.ru"
+    - "test/channels/application_cable/connection_test.rb"
+    
 
   DisplayCopNames: true
 
