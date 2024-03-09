@@ -1,5 +1,5 @@
 class Api::BoatsController < ApplicationController
-  before_action :set_boat, only: [:show]
+  before_action :set_boat, only: %i[show destroy]
 
   def index
     @boats = Boat.all
@@ -17,6 +17,16 @@ class Api::BoatsController < ApplicationController
     else
       render json: @boat.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    if @boat.destroy
+      render json: { message: 'Boat was successfully destroyed' }, status: :ok
+    else
+      render json: { errors: @boat.errors.full_messages }, status: :unprocessable_entity
+    end
+  rescue StandardError => e
+    render json: { error: e.message }, status: :internal_server_error
   end
 
   private
