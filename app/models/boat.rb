@@ -1,5 +1,5 @@
 class Boat < ApplicationRecord
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
 
   validates :name, :description, :image, presence: true
   validates :finance, :option, :amount, numericality: { greater_than_or_equal_to: 0 }
